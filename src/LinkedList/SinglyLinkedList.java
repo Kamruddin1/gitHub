@@ -1,7 +1,4 @@
 package LinkedList;
-
-import java.time.chrono.ThaiBuddhistEra;
-
 class Node{
     int data;
     Node next;
@@ -47,9 +44,6 @@ class LinkedList{
         return delval;
 
     }
-
-
-
     void pushBegin(int data){
         Node newNode = new Node(data);
         newNode.data = data;
@@ -75,8 +69,9 @@ class LinkedList{
         int count =0;
         Node temp = head;
         while (temp != null){
-            temp = temp.next;
             count++;
+            temp = temp.next;
+
         }
         return count;
     }
@@ -88,6 +83,45 @@ class LinkedList{
         }
         newNode.next = temp.next;
         temp.next = newNode;
+    }
+    int popPos(int pos){
+        Node temp = head;
+        int size=0;
+        if(pos > size){
+            System.out.println("Error: list has only" + size + "!!");
+            return -1;
+        }
+        if(pos == 1){
+            int delval = temp.next.data;
+            head = head.next;
+            return delval;
+        }
+        if(head.next == null){
+            int delval = temp.next.data;
+            head = head.next;
+            return delval;
+
+        }
+        for(int i=1; i<pos-1; i++){
+            temp = temp.next;
+        }
+        int delval = temp.next.data;
+        temp.next = temp.next.next;
+        return delval;
+    }
+    void reverse(){
+        Node pre = head;
+        Node curr = pre.next;
+        Node pos = curr.next;
+        while (curr != null){
+            curr.next = pre;
+            pre = curr;
+            curr = pos;
+            if(pos !=null)
+               pos = pos.next;
+        }
+        head.next = null;
+        head = pre;
     }
     void print(){
         Node temp = head;
@@ -105,16 +139,24 @@ public class SinglyLinkedList {
         myList.pushLast(10);
         myList.pushLast(20);
         myList.pushLast(20);
-        myList.pushPos(30,2);
+        myList.print();
+        myList.reverse();
         myList.print();
 
+//        myList.pushPos(30,2);
 
-        myList.print();
-       // System.out.println(myList.pop());my
 
-        myList.pushBegin(30);
-        myList.print();
-        System.out.println(myList.popBegin());
-        myList.print();
+
+//        myList.print();
+//       // System.out.println(myList.pop());my
+
+//        myList.pushBegin(30);
+//        myList.print();
+//        System.out.println(myList.popBegin());
+//        myList.print();
+//        System.out.println(myList.popPos(3));
+//        myList.print();
+//        System.out.println(myList.getSize());
+//        myList.print();
     }
 }
