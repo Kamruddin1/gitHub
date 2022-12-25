@@ -5,7 +5,6 @@ public class ContneousSum {
         int arr[] = {1 , 2 , 3, 4, 5};
         int n = arr.length;
         int sum=0;
-
         int prefix[] = new int[0];
         prefix[0] = arr[0];
         for(int i=0; i<n; i++){
