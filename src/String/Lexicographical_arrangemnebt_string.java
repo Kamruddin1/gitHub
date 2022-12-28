@@ -1,7 +1,6 @@
 package String;
 
 import java.util.Scanner;
-
 public class Lexicographical_arrangemnebt_string {
     public static void main(String[] args) {
         System.out.println("Enter the string ");
