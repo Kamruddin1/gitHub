@@ -12,16 +12,24 @@ class Stack{
        top++;
        stack[top] = data;
    }
-//   boolean isEmpty(){
-//       if(top <=0){
-//           System.out.println("stack is empty!! ");
-//           return -1;
-//       }
-//   }
+   boolean isEmpty(){
+       return top <= -1;
+   }
+    int pop(){
+       if(isEmpty()){
+           System.out.println("Stack is Empty!! ");
+           return -1;
+       }
+       int delval  = stack[top];
+       top--;
+       return delval;
+    }
    void print(){
        for(int i=0; i<=top; i++){
            System.out.print(stack[i]+" ");
+
        }
+       System.out.println();
    }
 
 }
@@ -31,9 +39,10 @@ public class stackTest {
         mystack.push(10);
         mystack.push(20);
         mystack.push(30);
-        mystack.push(10);
         mystack.push(40);
         mystack.push(50);
+        mystack.print();
+        System.out.println(mystack.pop());
         mystack.print();
 
     }
