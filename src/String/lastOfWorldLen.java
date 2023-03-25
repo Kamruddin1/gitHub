@@ -4,7 +4,6 @@ public class lastOfWorldLen {
     public static void main(String[] args) {
         String s = "hey i'm  ansari";
         System.out.println(lastOfLength(s));
-
     }
     static int lastOfLength(String s){
         String str = s.trim();
