@@ -1,4 +1,4 @@
-package OOPs;
+package OOPs.Private;
 class StudentDemo{
     // private key only, it can be use inside of the class
     // private key it can be use whole side of the class
